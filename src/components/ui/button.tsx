@@ -5,22 +5,21 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl text-sm font-semibold ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:scale-105 hover:shadow-lg active:scale-95",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+        default: "bg-gradient-primary text-primary-foreground shadow-elegant hover:shadow-glow backdrop-blur-sm",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-lg",
+        outline: "border-2 border-input bg-background/80 backdrop-blur-sm hover:bg-accent hover:text-accent-foreground shadow-card",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-card",
+        ghost: "hover:bg-accent hover:text-accent-foreground transition-all duration-300",
         link: "text-primary underline-offset-4 hover:underline",
-        success: "bg-success text-success-foreground hover:bg-success/90 shadow-md",
-        warning: "bg-warning text-warning-foreground hover:bg-warning/90 shadow-md",
-        info: "bg-info text-info-foreground hover:bg-info/90 shadow-md",
+        success: "bg-gradient-success text-success-foreground shadow-success hover:shadow-glow backdrop-blur-sm",
+        warning: "bg-gradient-warning text-warning-foreground shadow-warning hover:shadow-glow backdrop-blur-sm",
+        info: "bg-gradient-info text-info-foreground shadow-info hover:shadow-glow backdrop-blur-sm",
+        teal: "bg-gradient-teal-purple text-white shadow-elegant hover:shadow-glow backdrop-blur-sm",
+        sunset: "bg-gradient-sunset text-white shadow-elegant hover:shadow-glow backdrop-blur-sm",
       },
       size: {
         default: "h-10 px-4 py-2",
