@@ -9,17 +9,17 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 252 251 255;
-    --foreground: 30 41 59;
+    --foreground: 0 0 0;
 
     --card: 255 255 255;
-    --card-foreground: 30 41 59;
+    --card-foreground: 0 0 0;
 
     --popover: 255 255 255;
-    --popover-foreground: 30 41 59;
+    --popover-foreground: 0 0 0;
 
-    --primary: 139 69 255;
+    --primary: 262 83 58;
     --primary-foreground: 255 255 255;
-    --primary-glow: 167 139 250;
+    --primary-glow: 262 83 78;
 
     --secondary: 241 245 249;
     --secondary-foreground: 51 65 85;
@@ -30,12 +30,12 @@ All colors MUST be HSL.
     --accent: 245 243 255;
     --accent-foreground: 109 40 217;
 
-    --destructive: 239 68 68;
+    --destructive: 9 100 64;
     --destructive-foreground: 255 255 255;
 
     --border: 226 232 240;
     --input: 241 245 249;
-    --ring: 139 69 255;
+    --ring: 262 83 58;
 
     --success: 16 185 129;
     --success-foreground: 255 255 255;
@@ -51,9 +51,9 @@ All colors MUST be HSL.
 
     --teal: 20 184 166;
     --teal-foreground: 255 255 255;
-    --purple: 147 51 234;
-    --sunset-orange: 251 146 60;
-    --sunset-pink: 236 72 153;
+    --purple: 262 83 58;
+    --sunset-orange: 9 100 64;
+    --sunset-pink: 9 100 74;
 
     /* Beautiful gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
@@ -95,9 +95,9 @@ All colors MUST be HSL.
     --popover: 30 41 59;
     --popover-foreground: 248 250 252;
 
-    --primary: 167 139 250;
-    --primary-foreground: 15 23 42;
-    --primary-glow: 196 181 253;
+    --primary: 262 83 58;
+    --primary-foreground: 255 255 255;
+    --primary-glow: 262 83 78;
 
     --secondary: 51 65 85;
     --secondary-foreground: 226 232 240;
@@ -108,12 +108,12 @@ All colors MUST be HSL.
     --accent: 71 85 105;
     --accent-foreground: 226 232 240;
 
-    --destructive: 220 38 38;
-    --destructive-foreground: 248 250 252;
+    --destructive: 9 100 64;
+    --destructive-foreground: 255 255 255;
 
     --border: 51 65 85;
     --input: 71 85 105;
-    --ring: 167 139 250;
+    --ring: 262 83 58;
 
     --success: 34 197 94;
     --success-foreground: 248 250 252;
@@ -128,9 +128,9 @@ All colors MUST be HSL.
     --info-glow: 96 165 250;
 
     --teal: 20 184 166;
-    --purple: 147 51 234;
-    --sunset-orange: 251 146 60;
-    --sunset-pink: 236 72 153;
+    --purple: 262 83 58;
+    --sunset-orange: 9 100 64;
+    --sunset-pink: 9 100 74;
 
     /* Dark mode gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
