@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+				mono: ['JetBrains Mono', 'monospace'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -73,6 +77,10 @@ export default {
 					foreground: 'hsl(var(--teal-foreground))'
 				},
 				purple: 'hsl(var(--purple))',
+				charcoal: {
+					DEFAULT: 'hsl(var(--charcoal))',
+					foreground: 'hsl(var(--charcoal-foreground))'
+				},
 				sunset: {
 					orange: 'hsl(var(--sunset-orange))',
 					pink: 'hsl(var(--sunset-pink))'
@@ -96,7 +104,8 @@ export default {
 				'gradient-warning': 'var(--gradient-warning)',
 				'gradient-info': 'var(--gradient-info)',
 				'gradient-subtle': 'var(--gradient-subtle)',
-				'gradient-card': 'var(--gradient-card)'
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-hero': 'var(--gradient-hero)'
 			},
 			boxShadow: {
 				'elegant': 'var(--shadow-elegant)',
@@ -104,7 +113,8 @@ export default {
 				'success': 'var(--shadow-success)',
 				'warning': 'var(--shadow-warning)',
 				'info': 'var(--shadow-info)',
-				'card': 'var(--shadow-card)'
+				'card': 'var(--shadow-card)',
+				'xl': 'var(--shadow-xl)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -139,6 +149,14 @@ export default {
 				'spin-slow': {
 					'from': { transform: 'rotate(0deg)' },
 					'to': { transform: 'rotate(360deg)' }
+				},
+				'slide-up': {
+					'0%': { transform: 'translateY(20px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				'shimmer': {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(100%)' }
 				}
 			},
 			animation: {
@@ -148,7 +166,9 @@ export default {
 				'scale-in': 'scale-in 0.2s ease-out',
 				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
 				'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
-				'spin-slow': 'spin-slow 3s linear infinite'
+				'spin-slow': 'spin-slow 3s linear infinite',
+				'slide-up': 'slide-up 0.4s ease-out',
+				'shimmer': 'shimmer 2s ease-in-out infinite'
 			}
 		}
 	},
