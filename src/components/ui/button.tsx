@@ -9,15 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-gradient-primary text-primary-foreground shadow-elegant hover:shadow-glow backdrop-blur-sm",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-lg",
+        default: "bg-gradient-primary text-white shadow-elegant hover:shadow-glow backdrop-blur-sm",
+        destructive: "bg-destructive text-white hover:bg-destructive/90 shadow-lg",
         outline: "border-2 border-input bg-background/80 backdrop-blur-sm hover:bg-accent hover:text-accent-foreground shadow-card",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-card",
         ghost: "hover:bg-accent hover:text-accent-foreground transition-all duration-300",
         link: "text-primary underline-offset-4 hover:underline",
-        success: "bg-gradient-success text-success-foreground shadow-success hover:shadow-glow backdrop-blur-sm hover:scale-105 transition-all duration-300 border border-success/20",
-        warning: "bg-gradient-warning text-warning-foreground shadow-warning hover:shadow-glow backdrop-blur-sm hover:scale-105 transition-all duration-300 border border-warning/20",
-        info: "bg-gradient-info text-info-foreground shadow-info hover:shadow-glow backdrop-blur-sm",
+        success: "bg-gradient-success text-white shadow-success hover:shadow-glow backdrop-blur-sm hover:scale-105 transition-all duration-300 border border-success/20",
+        warning: "bg-gradient-warning text-white shadow-warning hover:shadow-glow backdrop-blur-sm hover:scale-105 transition-all duration-300 border border-warning/20",
+        info: "bg-gradient-info text-white shadow-info hover:shadow-glow backdrop-blur-sm",
         teal: "bg-gradient-teal-purple text-white shadow-elegant hover:shadow-glow backdrop-blur-sm",
         sunset: "bg-gradient-sunset text-white shadow-elegant hover:shadow-glow backdrop-blur-sm",
       },
