@@ -94,8 +94,14 @@ export const UI = ({ className }: UIProps) => {
 
   return (
     <>
-      <div className={`min-h-screen bg-gradient-hero p-6 transition-all duration-500 ${className}`}>
-        <div className="max-w-md mx-auto space-y-8">
+      <div className={`min-h-screen bg-gradient-background p-6 transition-all duration-500 relative overflow-hidden ${className}`}>
+        {/* Animated background elements */}
+        <div className="absolute inset-0 bg-gradient-background"></div>
+        <div className="absolute top-0 left-0 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+        
+        <div className="max-w-md mx-auto space-y-8 relative z-10">
           {/* Header with Theme Toggle */}
           <div className="flex justify-between items-center mb-4">
             <div className="flex items-center gap-3">
@@ -111,13 +117,13 @@ export const UI = ({ className }: UIProps) => {
           </div>
 
           {/* Timer and Counter Card */}
-          <Card className="bg-white/95 dark:bg-card/95 border-0 shadow-xl backdrop-blur-xl overflow-hidden animate-slide-up">
-            <div className="absolute inset-0 bg-gradient-primary opacity-5"></div>
+          <Card className="bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl overflow-hidden animate-slide-up">
+            <div className="absolute inset-0 bg-gradient-primary opacity-10"></div>
             <CardHeader className="pb-6 relative">
-              <CardTitle className="text-center text-xl font-bold flex items-center justify-center gap-3 text-foreground">
+              <CardTitle className="text-center text-xl font-bold flex items-center justify-center gap-3 text-white">
                 <div className="relative">
-                  <Search className="h-6 w-6 text-primary" />
-                  <div className="absolute inset-0 h-6 w-6 bg-primary/20 rounded-full blur animate-pulse"></div>
+                  <Search className="h-6 w-6 text-teal-400" />
+                  <div className="absolute inset-0 h-6 w-6 bg-teal-400/20 rounded-full blur animate-pulse"></div>
                 </div>
                 Live Dashboard
               </CardTitle>
@@ -126,11 +132,11 @@ export const UI = ({ className }: UIProps) => {
               <div className="grid grid-cols-2 gap-8">
                 <div className="text-center space-y-4 group">
                   <div className="flex items-center justify-center space-x-2 opacity-80 group-hover:opacity-100 transition-all duration-300">
-                    <Clock className="h-5 w-5 text-teal" />
-                    <span className="text-sm font-semibold text-muted-foreground tracking-wide">Timer</span>
+                    <Clock className="h-5 w-5 text-teal-400" />
+                    <span className="text-sm font-semibold text-white/70 tracking-wide">Timer</span>
                   </div>
                   <div className={`text-4xl font-mono font-bold transition-all duration-500 ${
-                    isTimerActive ? 'text-teal animate-pulse-glow scale-105' : 'text-primary'
+                    isTimerActive ? 'text-teal-400 animate-pulse-glow scale-105' : 'text-white'
                   }`}>
                     {formatTime(elapsedTime)}
                   </div>
@@ -145,14 +151,14 @@ export const UI = ({ className }: UIProps) => {
                 
                 <div className="text-center space-y-4 group">
                   <div className="flex items-center justify-center space-x-2 opacity-80 group-hover:opacity-100 transition-all duration-300">
-                    <Image className="h-5 w-5 text-purple" />
-                    <span className="text-sm font-semibold text-muted-foreground tracking-wide">Images</span>
+                    <Image className="h-5 w-5 text-purple-400" />
+                    <span className="text-sm font-semibold text-white/70 tracking-wide">Images</span>
                   </div>
-                  <div className="text-4xl font-bold text-purple transition-all duration-500 group-hover:scale-110">
+                  <div className="text-4xl font-bold text-purple-400 transition-all duration-500 group-hover:scale-110">
                     {state.imageCount}
                   </div>
                   {state.imageCount > 0 && (
-                    <div className="text-sm font-medium text-purple/80 animate-bounce-gentle">
+                    <div className="text-sm font-medium text-purple-400/80 animate-bounce-gentle">
                       +{state.imageCount} created ✨
                     </div>
                   )}
@@ -162,10 +168,10 @@ export const UI = ({ className }: UIProps) => {
           </Card>
 
           {/* Status Display Card */}
-          <Card className="bg-white/95 dark:bg-card/95 border-0 shadow-xl backdrop-blur-xl overflow-hidden animate-slide-up">
-            <div className="absolute inset-0 bg-gradient-sunset opacity-5"></div>
+          <Card className="bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl overflow-hidden animate-slide-up">
+            <div className="absolute inset-0 bg-gradient-sunset opacity-10"></div>
             <CardHeader className="pb-4 relative">
-              <CardTitle className="text-lg font-bold flex items-center justify-between text-foreground">
+              <CardTitle className="text-lg font-bold flex items-center justify-between text-white">
                 <span className="flex items-center gap-3">
                   {state.isRunning && !state.isPaused ? (
                     <Loader2 className="h-5 w-5 animate-spin-slow text-success" />
@@ -183,14 +189,14 @@ export const UI = ({ className }: UIProps) => {
               </CardTitle>
             </CardHeader>
             <CardContent className="relative">
-              <p className="text-base text-foreground mb-6 font-medium">
+              <p className="text-base text-white/90 mb-6 font-medium">
                 {state.statusMessage}
               </p>
               
               <Separator className="my-6 bg-gradient-to-r from-transparent via-border to-transparent opacity-50" />
               
               <div className="space-y-4">
-                <h4 className="text-base font-bold flex items-center gap-3 text-foreground">
+                <h4 className="text-base font-bold flex items-center gap-3 text-white">
                   <div className="w-3 h-3 bg-gradient-primary rounded-full animate-pulse shadow-glow"></div>
                   Activity Log
                 </h4>
@@ -199,7 +205,7 @@ export const UI = ({ className }: UIProps) => {
                     {state.logs.slice(-10).reverse().map((log, index) => (
                       <div 
                         key={index} 
-                        className="text-sm text-foreground p-3 rounded-xl bg-background/70 backdrop-blur-sm hover:bg-accent/30 transition-all duration-300 hover:scale-[1.02] font-medium"
+                        className="text-sm text-white/90 p-3 rounded-xl bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-[1.02] font-medium"
                         style={{ animationDelay: `${index * 100}ms` }}
                       >
                         {log}
@@ -212,8 +218,8 @@ export const UI = ({ className }: UIProps) => {
           </Card>
 
           {/* Control Buttons Card */}
-          <Card className="bg-white/95 dark:bg-card/95 border-0 shadow-xl backdrop-blur-xl overflow-hidden animate-slide-up">
-            <div className="absolute inset-0 bg-gradient-primary opacity-5"></div>
+          <Card className="bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl overflow-hidden animate-slide-up">
+            <div className="absolute inset-0 bg-gradient-primary opacity-10"></div>
             <CardContent className="pt-8 relative">
               <div className="grid grid-cols-3 gap-6">
                 <Button
@@ -221,10 +227,11 @@ export const UI = ({ className }: UIProps) => {
                   size="lg"
                   onClick={handleStart}
                   disabled={state.isRunning && !state.isPaused}
-                  className="flex-col h-24 gap-3 group transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-xl"
+                  className="flex-col h-28 gap-3 group transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-2xl relative overflow-hidden"
                 >
-                  <Play className="h-7 w-7 group-hover:scale-125 transition-transform duration-300" />
-                  <span className="text-sm font-bold tracking-wide">
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 to-emerald-400 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                  <Play className="h-8 w-8 group-hover:scale-125 transition-transform duration-300 relative z-10" />
+                  <span className="text-sm font-bold tracking-wide relative z-10">
                     {state.isPaused ? "Resume" : "Start"}
                   </span>
                 </Button>
@@ -234,20 +241,22 @@ export const UI = ({ className }: UIProps) => {
                   size="lg"
                   onClick={handlePause}
                   disabled={!state.isRunning || state.isPaused}
-                  className="flex-col h-24 gap-3 group transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-xl"
+                  className="flex-col h-28 gap-3 group transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-2xl relative overflow-hidden"
                 >
-                  <Pause className="h-7 w-7 group-hover:scale-125 transition-transform duration-300" />
-                  <span className="text-sm font-bold tracking-wide">Pause</span>
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-purple-400 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                  <Pause className="h-8 w-8 group-hover:scale-125 transition-transform duration-300 relative z-10" />
+                  <span className="text-sm font-bold tracking-wide relative z-10">Pause</span>
                 </Button>
                 
                 <Button
-                  variant="info"
+                  variant="destructive"
                   size="lg"
                   onClick={handleExit}
-                  className="flex-col h-24 gap-3 group transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-xl"
+                  className="flex-col h-28 gap-3 group transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-2xl relative overflow-hidden"
                 >
-                  <Square className="h-7 w-7 group-hover:scale-125 transition-transform duration-300" />
-                  <span className="text-sm font-bold tracking-wide">Stop</span>
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-600 to-red-400 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                  <Square className="h-8 w-8 group-hover:scale-125 transition-transform duration-300 relative z-10" />
+                  <span className="text-sm font-bold tracking-wide relative z-10">Stop</span>
                 </Button>
               </div>
             </CardContent>
