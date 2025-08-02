@@ -15,7 +15,7 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-card",
         ghost: "hover:bg-accent hover:text-accent-foreground transition-all duration-300",
         link: "text-primary underline-offset-4 hover:underline",
-        success: "bg-gradient-success text-purple-300 shadow-success hover:shadow-glow backdrop-blur-sm hover:scale-105 transition-all duration-300 border border-success/20 [&_svg]:text-purple-300",
+        success: "bg-gradient-success text-black shadow-success hover:shadow-glow backdrop-blur-sm hover:scale-105 transition-all duration-300 border border-success/20 [&_svg]:text-black",
         warning: "bg-gradient-warning text-white shadow-warning hover:shadow-glow backdrop-blur-sm hover:scale-105 transition-all duration-300 border border-warning/20",
         info: "bg-gradient-info text-white shadow-info hover:shadow-glow backdrop-blur-sm",
         teal: "bg-gradient-teal-purple text-white shadow-elegant hover:shadow-glow backdrop-blur-sm",
