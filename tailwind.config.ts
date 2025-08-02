@@ -105,7 +105,8 @@ export default {
 				'gradient-info': 'var(--gradient-info)',
 				'gradient-subtle': 'var(--gradient-subtle)',
 				'gradient-card': 'var(--gradient-card)',
-				'gradient-hero': 'var(--gradient-hero)'
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-black-red': 'var(--gradient-black-red)'
 			},
 			boxShadow: {
 				'elegant': 'var(--shadow-elegant)',
